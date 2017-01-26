@@ -33,3 +33,16 @@ function remove_home_from_breadcrumb($links)
 	return $links;
 }
 add_filter('wpseo_breadcrumb_links', 'remove_home_from_breadcrumb');
+
+add_filter( 'wp_nav_menu_items', 'wti_loginout_menu_link', 10, 2 );
+
+function wti_loginout_menu_link( $items, $args ) {
+   if ($args->theme_location == 'footer_navigation') {
+      if (is_user_logged_in()) {
+         $items .= '<li class="right"><a href="'. wp_logout_url() .'">'. __("Website Logout") .'</a></li>';
+      } else {
+         $items .= '<li class="right"><a href="'. wp_login_url(get_permalink()) .'">'. __("Website Login") .'</a></li>';
+      }
+   }
+   return $items;
+}
