@@ -5998,6 +5998,10 @@ html {
   text-decoration: none;
   border-bottom: 1px solid white;
 }
+.home .main > .page__wrap {
+  width: 100%;
+  padding: 0;
+}
 .home .main .page__builder__container.page-slideshow {
   padding: 0;
   border: 0;

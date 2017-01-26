@@ -1,3 +1,3 @@
 ## 1st Finchampstead Scout Group
 
-More to come.
+* Requires Advanced Custom Fields Pro 5 plugin for page builder and settings functionality.

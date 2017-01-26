@@ -1,5 +1,9 @@
 .home {
   .main {
+    >.page__wrap {
+        width: 100%;
+        padding: 0;
+      }
     .page__builder__container.page-slideshow {
       padding: 0;
       border: 0;
@@ -17,6 +21,11 @@
       }
       .page-slideshow__item {
         height: 380px;
+      }
+    }
+    .one_column {
+      .page__wrap {
+          max-width: @container-desktop;
       }
     }
     .fp__callout {
