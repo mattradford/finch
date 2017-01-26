@@ -6087,6 +6087,9 @@ html {
 .page__builder .leaders .leader:nth-child(odd) {
   background-color: #f7f7f7;
 }
+.page__builder .leaders + .leaders {
+  margin: 30px 0;
+}
 .page__builder .call_to_action {
   clear: both;
   padding: 20px 0px 10px 0px;
