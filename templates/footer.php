@@ -20,7 +20,11 @@
                 
                 <?php if(get_field('footer_colophon_text','options') && get_field('footer_colophon_link','options')) { ?>
                     <p class="colophon"><a href="<?php the_field('footer_colophon_link','options'); ?>"><?php the_field('footer_colophon_text','options'); ?></a></p>
-                <?php } ?>    
+                <?php } ?>   
+
+                <?php if( get_field( 'footer_credit_text', 'options' ) ) { ?>
+                    <p class="credir"><?php the_field( 'footer_credit_text', 'options' ); ?> </p>
+                <?php } ?>  
 
             </div>
         </div>
