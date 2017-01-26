@@ -1,0 +1,112 @@
+
+  .ui-widget {
+	background: @brand-primary;
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	box-shadow: 0 1px 3px darken(@brand-primary, 50%);
+}
+
+  .ui-datepicker {
+	padding: 0;
+}
+
+  .ui-datepicker-header {
+	border: none;
+	border-bottom: 1px solid @brand-primary;
+	background: transparent;
+	font-weight: normal;
+	font-size: 11px;
+	text-transform: uppercase;
+    padding-top: 7px;
+}
+
+  .ui-datepicker-header .ui-state-hover {
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+  .ui-datepicker .ui-datepicker-title {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+    text-align: center;
+      
+      select{
+          
+          .form-control();
+            width: 90px;
+            float: left;
+            margin-left: 40px;
+
+      }
+      
+}
+
+  .ui-datepicker .ui-datepicker-prev-hover,
+  .ui-datepicker .ui-datepicker-next-hover,
+  .ui-datepicker .ui-datepicker-next,
+  .ui-datepicker .ui-datepicker-prev {
+	border:none;
+    color:#efefef;
+    padding:0 7px;  
+}
+
+    .ui-datepicker .ui-datepicker-next{
+        float:right;
+    }
+
+
+  .ui-datepicker .ui-datepicker-next span,
+  .ui-datepicker .ui-datepicker-prev span {
+	margin-top: 0;
+	top: 0;
+	font-weight: normal;
+}
+
+
+  .ui-datepicker table {
+	margin: 0;
+    width:100%;  
+    min-width:300px;  
+}
+
+  .ui-datepicker th {
+	padding: 3em 0;
+	color: lighten(@brand-primary, 50%);
+	font-size: 8px;
+	font-weight: normal;
+	text-shadow: 0 0 2px lighten(@brand-primary, 60%);
+	text-transform: uppercase;
+	border: none;
+}
+
+  .ui-datepicker td {
+	border: none;
+	padding: 0;
+    text-align:center;  
+}
+
+  td .ui-state-default {
+	background: transparent;
+	border: none;
+	text-align: center;
+	padding: 1em 0;
+	margin: 0;
+	font-weight: normal;
+	color: #efefef;
+	font-size: 12px;
+    display: block;
+}
+
+  td .ui-state-active,
+  td .ui-state-hover {
+	background: darken(@brand-primary, 50%);
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}

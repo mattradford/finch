@@ -1,0 +1,86 @@
+// WordPress Generated Classes
+// http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+.aligncenter {
+    
+    display: block;
+    margin: (@line-height-computed / 2) auto;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.alignleft,
+.alignright {
+    
+    margin-bottom: (@line-height-computed / 2);
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.alignnone {
+    
+    .img-responsive();
+    
+}
+
+.alignnone img {
+    
+    .img-responsive();
+    
+}
+
+figure.alignnone {
+    
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  .img-responsive();
+    
+}
+
+
+@media (min-width: @screen-sm-min) {
+  // Only float images if not on an extra small device like smartphones
+    
+  .alignleft {
+      
+    float: left;
+    margin-right: (@line-height-computed / 2);
+      
+  }
+    
+  .alignright {
+      
+    float: right;
+    margin-left: (@line-height-computed / 2);
+      
+  }
+}
+
+
+.wp-caption {
+    
+    max-width: 100%;
+    background: #eee;
+    padding: 5px;
+
+    /* images inside wp-caption */
+    img {
+        
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+        
+    }
+
+    p.wp-caption-text {
+        
+        font-size: 0.85em;
+        margin: 4px 0 7px;
+        text-align: center;
+        
+    }
+
+} /* end .wp-caption */   

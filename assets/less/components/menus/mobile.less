@@ -1,0 +1,428 @@
+// nav-control variables
+@button-width: 40px;                    // The width of the button area
+@button-height: 40px;                   // The height of the button area
+@bar-colour: white;
+@button-pad: 6px;                      // The left/right padding between button area and bars.
+@button-bar-space: 6px;                // The spacing between button bars
+@button-transistion-duration: 0.3s;     // The transition duration
+@nav-control-bg: @brand-primary;
+
+.navbar--header nav {
+    // margin-top: 10px;
+    ul {
+        background: @brand-primary;
+        height: auto;
+        width: 100%;
+        .list-unstyled();
+
+        > li {
+            position: relative;
+            width: 100%;
+        }
+
+        li {
+            display: block;
+            &.tap {
+
+                ul {
+                    display: block;
+                    position: relative;
+
+                }
+
+                a {
+                    span {
+                        &:after {
+                            border-width: 0 6.5px 6.5px 6px;
+                            border-color: transparent transparent @white transparent;
+                        }
+                    }
+                }
+            }
+
+            &.current-page-ancestor, &.current-menu-ancestor, &.current-menu-parent, &.current-page-parent, &.current-page-item, &.current-menu-item {
+                 background-color: darken(@brand-primary,3%);
+            }
+        }
+
+        a {
+            line-height: 40px;
+            position: relative;
+            display: block;
+            color: @white;
+            padding: 0px 10px;
+
+            span {
+                position: absolute;
+                right: 0;
+                top: 0;
+                .square(40px);
+                background-color: darken(@brand-primary,10%);
+
+                &:after {
+                content: " ";
+                    display: block;
+                    top: 44%;
+                    left: 40%;
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 6.5px 6.5px 0 6px;
+                    border-color: @white transparent transparent transparent;
+                }
+
+            }
+        }
+
+//      Sub menus
+        ul {
+            background: lighten(@brand-primary,5%);
+            display: none;
+
+
+            a {
+                cursor: pointer;
+                display: block;
+                color: white;
+                line-height: 30px;
+                padding: 0 10px;
+            }
+
+        }
+    }
+}
+
+.navbar--header {
+    display: none;
+}
+
+
+.banner__nav-control {
+
+  color: white;
+
+    .nav-control {
+
+      color: white;
+      text-decoration: none;
+
+            &.dl-active {
+
+
+            }
+
+
+    }
+}
+
+.mobile-menu.navbar--header {
+    /* Common styles of menus */
+        display: block;
+        position:relative;
+        z-index: 9999;
+
+
+    nav {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-perspective-origin: 50% 200%;
+        perspective-origin: 50% 200%;
+// margin-top: -10px;
+
+        ul {
+            padding: 0;
+            list-style: none;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            width: 100%;
+        }
+
+        li {
+            position: relative;
+
+            img { // only used if images have been injected into the menu in lib/nav.php
+                display: none;
+            }
+
+             a {
+                display: block;
+                position: relative;
+                padding: 15px @pad;
+                line-height: @pad;
+                border-top: 1px solid lighten(@brand-primary, 5%);
+                font-weight: 300;
+                color: #fff;
+                outline: none;
+
+                &:hover {
+                    text-decoration: none;
+                    background: rgba(0,0,0,0.1);
+                }
+            }
+
+           &.dl-back > a {
+                padding-left: 30px;
+                background: rgba(0,0,0,0.1);
+            }
+        }
+
+
+
+    }
+
+    .no-touch nav li a:hover {
+        background: rgba(255,248,213,0.1);
+    }
+
+
+
+    nav li.dl-back:after,
+    nav li > a:not(:only-child):after {
+        position: absolute;
+        top: 0;
+        line-height: 50px;
+        font-family: 'fontawesome';
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        content: @fa-var-angle-right;
+        font-weight: bold;
+    }
+
+    nav li.dl-back:after {
+        left: 10px;
+        color: rgba(212,204,198,0.3);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        font-weight: bold;
+    }
+
+    nav li > a:after {
+        right: 10px;
+        color: rgba(255,255,255,0.45);
+    }
+
+    nav .menu {
+        margin: 0 0 0 0;
+        position: absolute;
+        width: 100%;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        &.dl-menu-toggle {
+           transition: all 0.3s ease;
+        }
+
+        &.dl-menuopen {
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+    }
+
+    /* Hide the inner submenus */
+    nav li .dropdown-menu {
+        display: none;
+    }
+
+    /*
+    When a submenu is openend, we will hide all li siblings.
+    For that we give a class to the parent menu called "dl-subview".
+    We also hide the submenu link.
+    The opened submenu will get the class "dl-subviewopen".
+    All this is done for any sub-level being entered.
+    */
+    .dl-subview li,
+    .dl-subview li.dl-subviewopen > a,
+    .dl-subview li.dl-subview > a {
+        display: none;
+    }
+
+    .dl-subview li.dl-subview,
+    .dl-subview li.dl-subview .dropdown-menu,
+    .dl-subview li.dl-subviewopen,
+    .dl-subview li.dl-subviewopen > .dropdown-menu,
+    .dl-subview li.dl-subviewopen > .dropdown-menu > li {
+        display: block;
+    }
+
+    /* Dynamically added submenu outside of the menu context */
+    nav > .dropdown-menu {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        left: 0;
+        margin: 0;
+    }
+
+    /* Animation classes for moving out and in */
+
+
+    .dl-animate-out-2 {
+        -webkit-animation: MenuAnimOut2 0.3s ease-in-out;
+        animation: MenuAnimOut2 0.3s ease-in-out;
+    }
+
+
+
+    @-webkit-keyframes MenuAnimOut2 {
+        0% { }
+        100% {
+            -webkit-transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes MenuAnimOut2 {
+        0% { }
+        100% {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+
+
+    .dl-animate-in-2 {
+        -webkit-animation: MenuAnimIn2 0.3s ease-in-out;
+        animation: MenuAnimIn2 0.3s ease-in-out;
+    }
+
+
+
+
+    @-webkit-keyframes MenuAnimIn2 {
+        0% {
+            -webkit-transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes MenuAnimIn2 {
+        0% {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+
+
+
+    nav .dropdown-menu.dl-animate-in-2 {
+        -webkit-animation: SubMenuAnimIn2 0.3s ease-in-out;
+        animation: SubMenuAnimIn2 0.3s ease-in-out;
+    }
+
+
+
+
+    @-webkit-keyframes SubMenuAnimIn2 {
+        0% {
+            -webkit-transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes SubMenuAnimIn2 {
+        0% {
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+
+
+
+    nav .dropdown-menu.dl-animate-out-2 {
+        -webkit-animation: SubMenuAnimOut2 0.3s ease-in-out;
+        animation: SubMenuAnimOut2 0.3s ease-in-out;
+    }
+
+
+
+    @-webkit-keyframes SubMenuAnimOut2 {
+        0% {
+            -webkit-transform: translateX(0%);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+
+    @keyframes SubMenuAnimOut2 {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+    /* No JS Fallback */
+    .no-js nav .dl-menu {
+        position: relative;
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .no-js nav li .dropdown-menu {
+        display: block;
+    }
+
+    .no-js nav li.dl-back {
+        display: none;
+    }
+
+    .no-js nav li > a:not(:only-child) {
+        background: rgba(0,0,0,0.1);
+    }
+
+    .no-js .nav li > a:not(:only-child):after {
+        content: '';
+    }
+
+    /* Colors */
+    nav button {
+        background: @brand-primary;
+    }
+
+    nav button:hover,
+    nav button.dl-active,
+    .nav ul {
+        background: @brand-primary;
+    }
+}

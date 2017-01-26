@@ -1,0 +1,22 @@
+.page {
+    .page__builder {
+        .four_column {
+            .wysiwyg_editor {
+                .make-column(3);
+            }
+        }
+        .leaders {
+            .leader {
+                flex-basis: 50%;
+                 &:nth-child(odd) {
+               background-color: #fafafa;
+           }
+            }
+        }
+    }
+    .bg-cols {
+        .inner {
+            min-height: 460px
+        }
+    }
+}

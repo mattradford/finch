@@ -1,0 +1,63 @@
+.banner {
+  padding: 12px 0 6px;
+  .banner__logo {
+    .logo {
+      .img-retina('../img/scout-logo.png', 150px, 93px);
+    }
+  }
+  .banner__title {
+    span {
+      font-size: 28px;
+    }
+  }
+  .banner__button {
+    .nav-control {
+      display: none;
+    }
+    .button.join {
+      padding: 8px 16px 10px;
+      font-size: 22px;
+      span {
+        display: inline-block;
+        margin-right: 0.25em;
+      }
+    }
+  }
+}
+// Main content area
+.main {
+   .page__featured-image {
+    height: 500px;
+    align-items: baseline;
+    border-bottom: none;
+
+  }
+  .page__wrap {
+    &.page__image {
+      margin-top: -120px;
+      border-top: 3px solid @scout-green;
+      background-color: white;
+
+      .page__title {
+        h1 {
+          margin:30px 0 25px;
+        }
+      }
+    }
+  }
+  .page__columns {
+    .make-column(10);
+    .make-column-offset(1);
+  }
+}
+.content-info {
+  a {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid white;
+    &:hover,
+    &:focus {
+      background-color: white;
+      color: @brand-primary;
+    }
+  }
+}

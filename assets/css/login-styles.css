@@ -1,0 +1,45 @@
+.login {
+  background: white;
+  /* Set the size of the login logo */
+  /* Hide the "Back to (website)" link */
+  /* Hide the "Log in" link on the last password page, as it's pointless*/
+  /* Center align the Lost Password link */
+}
+.login h1 a {
+  background-image: url('../img/finch-logo.png');
+  background-size: 140px 140px;
+  width: 140px;
+  height: 140px;
+}
+.login p#backtoblog {
+  display: none;
+}
+.login.login-action-lostpassword p#nav {
+  display: none;
+}
+.login.login-action-login p#nav {
+  text-align: center;
+}
+.login input#wp-submit {
+  background-color: #4d2177;
+  border-color: #401b63;
+}
+.login input#wp-submit:hover,
+.login input#wp-submit:focus {
+  background-color: #33164f;
+  border-color: #26103b;
+}
+.login .message {
+  border-left-color: #4d2177;
+}
+.login form {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.wp-admin #wp-auth-check-wrap #wp-auth-check {
+  background-color: #4d2177;
+}
+.wp-core-ui .button-primary {
+  text-shadow: none;
+}
+/*# sourceMappingURL=login-styles.css.map */

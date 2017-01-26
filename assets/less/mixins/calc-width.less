@@ -1,0 +1,9 @@
+.calc-width(@margin, @fallback) {
+    width: @fallback;
+    width: -o-calc(~"100% - "@margin);  
+    width: -webkit-calc(~"100% - "@margin); /** Safari 6, Chrome 19-25 **/
+    width: -moz-calc(~"100% - "@margin); /** FF 4-15  **/
+    width: calc(~"100% - "@margin); /** FF 16+, IE 9+, Opera 15, Chrome 26+, Safari 7 and future other browsers **/
+    
+    /* See http://caniuse.com/#search=calc for known issues with calc */
+}

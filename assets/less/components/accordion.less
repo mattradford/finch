@@ -1,0 +1,138 @@
+h3.accordion__title {
+
+    display: none;
+    
+}
+.accordion__header {
+    
+    display: block;
+    width: 100%;
+    background-color: @grey-lighter;
+    border: 0;
+    text-align: left;
+    padding: 15px 20px;
+    position: relative;
+    .transition(all 0.3s ease);
+    border: 1px solid transparent;
+    margin: 0px 0px 10px 0px;
+    
+    &:focus {
+        
+        outline: none;
+        border: 1px dotted @brand-primary;
+        
+    }
+    
+    &:after {
+        
+        position: absolute;
+        display: inline-block;
+        right: 20px;
+        top: 6px;
+        color: @brand-primary;
+        .transition(all 0.3s ease);
+        font-size: 30px;
+        
+    }
+
+    /* title closed */
+    &[aria-expanded="false"] {
+       
+        &:after {
+            
+            font-family: "fontawesome";
+            content: @fa-var-angle-down;
+            color: @brand-primary;
+            
+        }
+    }
+
+    /* title opened */
+    &[aria-expanded="true"] {
+        
+         font-weight: bold;
+         &:after {
+            font-family: "fontawesome";
+            content: @fa-var-angle-up;  
+            color: @brand-primary;
+            
+         }
+            
+    }
+
+}
+
+.accordion__panel {
+    
+    background-color: @grey-lighter;
+    padding: 15px 20px;
+    border-bottom: 1px solid @grey-lighter;
+    
+    &[aria-hidden="false"] {
+        
+        .transition(all 1s ease);
+        border-bottom-color: @brand-primary;
+        
+    }
+
+}
+
+.js {
+    
+    .accordion__header {
+        
+        /* title closed */ 
+        &[aria-hidden="true"]:after {
+            
+            content: "\02C5";
+            
+        }
+        
+        /* title opened */
+        &[aria-hidden="false"]{
+            
+            font-weight: bold;
+            
+            &:after {
+                
+                content: "\02C4";  
+                
+            }
+        }
+    }
+
+    .accordion__panel {
+        
+        &[aria-hidden=true] {
+            
+            display: none;
+            
+        }         
+        
+        &[aria-hidden="false"] {
+            
+            border-bottom-color: @brand-primary;
+            
+        }        
+    }
+
+}
+
+//.fontface {
+//    .accordion__header {
+//        &:after {
+//            .font-icon();
+//            top: 17px;
+//            font-size: 25px;
+//        }
+//        /* title closed */
+//        &[aria-expanded="false"]:after {
+//            content: "\f055";
+//        }
+//        
+//        /* title opened */
+//        &[aria-expanded="true"]:after {
+//            content: "\f056";  
+//        }
+//     }
+//}

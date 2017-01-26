@@ -1,0 +1,1 @@
+<?php the_content(); // comment this out if you don't need it; ?>

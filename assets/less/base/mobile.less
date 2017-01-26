@@ -1,0 +1,197 @@
+html {
+  height: 100%;
+}
+.banner {
+  background-color: @scout-purple;
+  padding: 10px 0 12px;
+  .banner__container {
+    .container();
+  }
+  .banner__row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .banner__logo {
+    .logo {
+      display: none;
+      // Requires a double-size image.
+      .img-retina('../img/fleur-de-lis.png', 30px, 30px);
+      vertical-align: middle;
+    }
+  }
+  .banner__title {
+    span {
+      font-family: @serif;
+      color: white;
+      font-size: 16px;
+      vertical-align: middle;
+      &:first-child {
+        margin-left: 10px;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:last-child {
+        margin-left: 10px;
+        display: block;
+      }
+    }
+  }
+  .banner__button {
+    text-align: right;
+    flex-grow: 1;
+    .button {
+      border-radius: 3px;
+      font-family: @serif;
+      padding: 5px;
+      &.nav-control {
+        background-color: @scout-orange;
+      }
+      &.join {
+        background-color: @scout-green;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// Mobile menu code all moved to components/menu/mobile.less
+// Main content area
+.main {
+  padding-bottom: 20px;
+  .page__wrap {
+    .container();
+    .clearfix();
+    padding: 0 20px;
+    &.page__image {
+      // padding-top: 25px;
+    }
+  }
+  .page__row {
+    .make-row();
+    .clearfix();
+  }
+  .page__columns {
+    .make-column(12);
+    input {
+      &.search-submit,
+      &.search-field {
+        margin-top: 10px;
+      }
+    }
+  }
+  .page__title {
+    text-align: center;
+    padding-top: 10px;
+    h1 {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 10px;
+      color: @scout-green;
+      // margin-top: 10px;
+      &:after {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        height: 3px;
+        background-color: currentColor;
+        content: "";
+      }
+    }
+  }
+  .page__featured-image {
+    .bg-cover(200px);
+    border-bottom: 3px solid @scout-green;
+  }
+}
+.breadcrumbs-search {
+  .small();
+  background-color: @grey-lighter;
+  color: @text-color;
+  padding: 25px 0;
+  .page__wrap {
+    .container();
+  }
+  .page__row {
+    .make-row();
+  }
+  .breadcrumbs {
+    .make-column(12);
+    margin-bottom: 30px;
+  }
+  .search {
+    .make-column(12);
+    text-align: center;
+    .search-field {
+      box-shadow: none;
+      padding: 5px 12px;
+      border: 1px solid @scout-grey;
+      border-radius: @border-radius-base;
+      vertical-align: middle;
+    }
+    .search-submit {
+      margin-left: 3px;
+    }
+  }
+}
+.content-info {
+  background-color: @brand-primary;
+  color: white;
+  a {
+    color: white;
+  }
+  .footer__container {
+    .container();
+    padding: 0 20px;
+  }
+  .footer__row {
+    .make-row();
+  }
+  .footer__nav {
+    .small();
+    .make-column(12);
+    text-align: center;
+    padding-top: 20px;
+    ul {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    li {
+      display: block;
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid white;
+    }
+  }
+  .footer__text {
+    .make-column(12);
+    .small();
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    p {
+      &.copyright {
+        margin-right: 6px;
+        display: inline-block;
+        margin-bottom: 0;
+      }
+      &.charity {
+        display: inline-block;
+      }
+      a {
+        text-decoration: none;
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}

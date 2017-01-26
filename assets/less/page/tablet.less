@@ -1,0 +1,99 @@
+.page {
+    .page__builder {
+        .page__builder__container:first-child {
+            padding-top: 0;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        .two_column {
+            .wysiwyg_editor {
+                .make-column(6);
+            }
+        }
+        .third_two_thirds {
+            .wysiwyg_editor:first-child {
+                .make-column(4);
+            }
+            .wysiwyg_editor:last-child {
+                .make-column(8);
+            }
+        }
+        .two_thirds_third {
+            .wysiwyg_editor:first-child {
+                .make-column(8);
+            }
+            .wysiwyg_editor:last-child {
+                .make-column(4);
+            }
+        }
+        .three_column {
+            .wysiwyg_editor {
+                .make-column(4);
+            }
+        }
+        .four_column {
+            .wysiwyg_editor {
+                .make-column(6);
+            }
+        }
+        .blockquote {
+            overflow: hidden;
+            .blockquote__inner {
+                .make-column(8);
+                .make-column-offset(2);
+            }
+        }
+        .accordion__wrapper {
+            .accordion__inner {
+                .make-column(12);
+            }
+        }
+        .leaders {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            h2 {
+                flex-basis: 100%;
+            }
+            .leader {
+                display: flex;
+                flex-basis: 100%;
+                h3 {
+                    margin-top: 5px;
+                }
+            }
+            .leader+.leader {
+                margin: 0;
+            }
+        }
+    }
+    .bg-cols {
+        .inner {
+            min-height: 420px
+        }
+    }
+    .newsletter {
+        .gform_body {
+            width: 90%;
+            float: left;
+            input {
+                border: 0;
+            }
+        }
+        .gform_footer {
+            width: 10%;
+            float: left;
+            text-align: left;
+        }
+    }
+}
+
+.page-gallery {
+    .page-gallery__item {
+        .make-column(3);
+    }
+}
