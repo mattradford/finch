@@ -22,6 +22,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/acf-json\/group_588a6d21a417b.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_588a6d21a417b.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_588a6d21a417b-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/assets\/css\/editor-style.css": {
 		"fileType": 16,
 		"ignore": 1,
