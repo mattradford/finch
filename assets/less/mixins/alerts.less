@@ -4,7 +4,10 @@
   background-color: @background;
   border-color: @border;
   color: @text-color;
-
+  margin: 20px 0;
+position: relative;
+padding: 20px 3em;
+border-radius: 4px;
   hr {
     border-top-color: darken(@border, 5%);
   }
@@ -12,3 +15,49 @@
     color: darken(@text-color, 10%);
   }
 }
+
+.alert-red {
+  background-color: @googleplus;
+  border: 1px solid darken(@googleplus,5%);
+  color: white;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  a {
+    color: white;
+    text-decoration: underline;
+    &:hover, &:focus {
+      color: @googleplus;
+      background-color: white;
+    }
+  }
+}
+
+.alert-green {
+  background-color: lighten(@scout-green, 10%);
+  border: 1px solid darken(@scout-green,5%);
+  color: white;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  a {
+    color: white;
+     text-decoration: underline;
+    &:hover, &:focus {
+      color: lighten(@scout-green, 10%);
+      background-color: white;
+    }
+  }
+}
+
+.alert-grey {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+}
+

@@ -1,3 +1,47 @@
+.alert-red {
+  background-color: #dd4b39;
+  border: 1px solid #d73925;
+  color: white;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+}
+.alert-red a {
+  color: white;
+  text-decoration: underline;
+}
+.alert-red a:hover,
+.alert-red a:focus {
+  color: #dd4b39;
+  background-color: white;
+}
+.alert-green {
+  background-color: #aad40e;
+  border: 1px solid #718c09;
+  color: white;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+}
+.alert-green a {
+  color: white;
+  text-decoration: underline;
+}
+.alert-green a:hover,
+.alert-green a:focus {
+  color: #aad40e;
+  background-color: white;
+}
+.alert-grey {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+}
 .button {
   color: white;
   background-color: #84a40b;
