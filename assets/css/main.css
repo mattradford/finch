@@ -6827,15 +6827,12 @@ html {
     background-color: #718c09;
   }
   .main .page__featured-image {
-    height: 500px;
+    height: 250px;
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
-    border-bottom: none;
   }
   .main .page__wrap.page__image {
-    margin-top: -120px;
-    border-top: 3px solid #84a40b;
     background-color: white;
   }
   .main .page__wrap.page__image .page__title h1 {

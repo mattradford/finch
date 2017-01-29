@@ -81,6 +81,11 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                             ?>
                                 <a href="mailto:<?php echo antispambot( $finch_email, 1 ); ?>"><?php echo antispambot( $finch_email, 0 ); ?></a>
                             <?php } ?>
+                            <?php
+                            if( get_sub_field( 'add_phone' ) && get_sub_field('phone_number') ) {
+                            ?>
+                                <p><a href="tel:<?php the_sub_field('phone_number'); ?>"><?php the_sub_field('phone_number'); ?></a></p>
+                            <?php } ?>
 
                         </div>
                     </div>

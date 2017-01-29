@@ -15,6 +15,14 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
+	"\/acf-json\/group_56054cb459ca7.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_56054cb459ca7-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/acf-json\/group_56a7e6ce0ec7b.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -2433,6 +2441,16 @@
 		"oA": 0,
 		"oAP": "\/sitemap.php",
 		"oF": 0
+		},
+	"\/style-min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/style-min-min.css",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/style.css": {
 		"aP": 0,
