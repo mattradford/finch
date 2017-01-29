@@ -203,23 +203,17 @@
     
     .page-slideshow__inner {
         .make-column(12);
-        
+        a.button-green {
+            position: absolute;
+            z-index: 999999;
+            top: 85%;
+            left: calc(~'50% - 60px')
+        }
     }
     .page-slideshow__slick {
         border: 5px solid @brand-primary;
         border-radius: 6px;
-        position: relative;
-        &:after {
-            position: absolute;
-            display: inline-block;
-            bottom: 90%;
-            left: 50%;
-            font-family: "fontawesome";
-            content: @fa-var-angle-down;
-            color: @brand-primary;
-            height: 30px;
-            width: 30px;
-        }
+        
     }
     .page-slideshow__item {
         .bg-cover(480px);
@@ -266,6 +260,10 @@
         padding: 10px 30px;
         img {
             .img-responsive(@display: inline-block);
+        }
+        sup {
+            top: -0.2em;
+            margin-left: -0.2em;
         }
     }
 }

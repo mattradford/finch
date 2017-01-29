@@ -6278,21 +6278,15 @@ html {
   padding-left: 10px;
   padding-right: 10px;
 }
+.page-slideshow .page-slideshow__inner a.button-green {
+  position: absolute;
+  z-index: 999999;
+  top: 85%;
+  left: calc(50% - 60px);
+}
 .page-slideshow .page-slideshow__slick {
   border: 5px solid #4d2177;
   border-radius: 6px;
-  position: relative;
-}
-.page-slideshow .page-slideshow__slick:after {
-  position: absolute;
-  display: inline-block;
-  bottom: 90%;
-  left: 50%;
-  font-family: "fontawesome";
-  content: "\f107";
-  color: #4d2177;
-  height: 30px;
-  width: 30px;
 }
 .page-slideshow .page-slideshow__item {
   background: no-repeat center center;
@@ -6352,6 +6346,10 @@ html {
   width: 100% \9;
   max-width: 100%;
   height: auto;
+}
+.section-logos .section sup {
+  top: -0.2em;
+  margin-left: -0.2em;
 }
 .search-no-results .main {
   text-align: center;

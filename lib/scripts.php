@@ -36,19 +36,15 @@ function roots_scripts() {
         wp_register_script( 'accordion-js', get_template_directory_uri() . '/assets/js/plugins/jquery.accordion.min.js', array(), '', true );
         wp_register_script( 'custom-scripts', get_template_directory_uri() . '/assets/js/custom_scripts.min.js', array(), '', true );
 
-
-        if (is_single() && comments_open() && get_option('thread_comments')) {
-            wp_enqueue_script('comment-reply');
-        }
-
   }
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('slick');
-    wp_enqueue_script('google-map-init');
+    // wp_enqueue_script('google-map-init');
     wp_enqueue_script('magnific-popup');
     wp_enqueue_script('accordion-js');
     wp_enqueue_script('mobile-menu');
+    wp_enqueue_script('custom-scripts');
 
   //  Enqueue for a specific CPT
    if (is_page_template('where-we-meet.php')) {

@@ -172,6 +172,13 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                                 <?php endforeach; ?>
                             </div>
                     <?php endif; ?>
+                    <?php
+                    if ( is_front_page() ) {
+                        echo '<a href="#find-out-more" class="button-green">';
+                        _e( 'Find out more', 'finch');
+                        echo '</a>';
+                    }
+                    ?>
                </div>
             </div>
         

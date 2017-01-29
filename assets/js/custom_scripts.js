@@ -2,15 +2,15 @@
 
 jQuery(document).ready(function($){
 
-    if($(window).width()<991){
+    // if($(window).width()<991){
 
-        $(".navbar--header").addClass("mobile-menu");
+    //     $(".navbar--header").addClass("mobile-menu");
 
-        $(".navbar--header nav").dlmenu({
+    //     $(".navbar--header nav").dlmenu({
 
-            animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
-        });
-    }
+    //         animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+    //     });
+    // }
 
     $(".page-slideshow__slick").slick();
 
@@ -20,28 +20,35 @@ jQuery(document).ready(function($){
           gallery:{enabled:true}
         });
 
+
+    $("#find-out-more").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#find-out-more").offset().top
+      }, 2000);
+  });
+
 });
 
 jQuery(window).resize(function() {
 
-    if(jQuery(window).width()<990) {
-        // on resize down from desktop, add mobile menu classes & initiate dlmenu
-        if(!jQuery(".navbar--header").hasClass("mobile-menu")) {
+    // if(jQuery(window).width()<990) {
+    //     // on resize down from desktop, add mobile menu classes & initiate dlmenu
+    //     if(!jQuery(".navbar--header").hasClass("mobile-menu")) {
 
-            jQuery(".navbar--header").addClass("mobile-menu");
-            jQuery("navbar--header nav").dlmenu({
-                animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
-            });
-        }
+    //         jQuery(".navbar--header").addClass("mobile-menu");
+    //         jQuery("navbar--header nav").dlmenu({
+    //             animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+    //         });
+    //     }
 
 
-    }else{
-        // on resize up, remove mobile menu classes & unbind dlmenu
-        jQuery(".navbar--header").removeClass("mobile-menu");
-        jQuery(".dl-back").remove();
-        jQuery(".navbar--header nav li, .nav-control").unbind("click.dlmenu");
+    // }else{
+    //     // on resize up, remove mobile menu classes & unbind dlmenu
+    //     jQuery(".navbar--header").removeClass("mobile-menu");
+    //     jQuery(".dl-back").remove();
+    //     jQuery(".navbar--header nav li, .nav-control").unbind("click.dlmenu");
 
-    }
+    // }
 
 });
 
@@ -81,6 +88,7 @@ var Roots = {
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+    $('.fp__callout').attr('id', 'find-out-more');
     }
   },
   // About us page, note the change from about-us to about_us.
