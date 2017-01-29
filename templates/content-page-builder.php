@@ -91,6 +91,50 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 
            </div>
         
+     
+        
+        <?php elseif( get_row_layout() == 'section_logos' ): ?> 
+           <div class="page__builder__container section-logos">
+                <?php
+                if ( get_sub_field('section_header') ) {
+                    the_sub_field('section_header') .'">';
+                }
+                ?>
+           
+               <?php 
+               if( have_rows( 'section' ) ) {
+                   echo '<div class="section-logos__container">';
+                    while ( have_rows( 'section' ) ) {
+                        the_row();
+                ?>
+                    <div class="section">
+                        <?php
+                        if ( get_sub_field('section_link') ) {
+                            echo '<a href="'. get_sub_field('section_link') .'">';
+                        }
+                        if ( get_sub_field('image') ) {
+                            $imageArray = get_sub_field( 'image' );
+                            $imageAlt = $imageArray['alt'];
+                            $imageURL = $imageArray['url'];
+                            echo '<img src="'.$imageURL.'" alt="'.$imageAlt.'">';
+                        }
+                        if ( get_sub_field('section_link') ) {
+                            echo '</a>';
+                        }
+                        if( get_sub_field( 'text' ) ) {
+                           echo '<p>' . get_sub_field('text') . '</p>';
+                        } 
+                        
+                        ?>
+                    </div>
+                <?php
+                    } 
+                    echo '</div>';
+               }
+               ?>
+
+           </div>
+        
         <?php elseif( get_row_layout() == 'accordion' ): ?>
             <div class="page__builder__container accordion__wrapper">
             

@@ -97,3 +97,25 @@
         .make-column(3);
     }
 }
+
+.section-logos {
+     .section-logos__container {
+    flex-direction: row;
+
+     }
+    .section {
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: column;
+        img {
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+            &:hover, &:focus {
+                transform: scale(1.1);
+            }
+        }
+        p {
+            margin-top: auto;
+        }
+    }
+}
