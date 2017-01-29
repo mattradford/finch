@@ -6283,6 +6283,7 @@ html {
   z-index: 999999;
   top: 85%;
   left: calc(50% - 60px);
+  font-weight: bold;
 }
 .page-slideshow .page-slideshow__slick {
   border: 5px solid #4d2177;

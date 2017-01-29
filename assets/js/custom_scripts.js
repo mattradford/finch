@@ -12,6 +12,12 @@ jQuery(document).ready(function($){
     //     });
     // }
 
+ $("#find-out-more").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#find-out-more").offset().scrollTop
+        }, 2000);
+  });
+
     $(".page-slideshow__slick").slick();
 
     $('.page-gallery').magnificPopup({
@@ -21,11 +27,7 @@ jQuery(document).ready(function($){
         });
 
 
-    $("#find-out-more").click(function() {
-      $('html, body').animate({
-          scrollTop: $("#find-out-more").offset().top
-      }, 2000);
-  });
+   
 
 });
 
