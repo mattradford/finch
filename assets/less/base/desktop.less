@@ -2,7 +2,7 @@
   padding: 12px 0 6px;
   .banner__logo {
     .logo {
-      .img-retina('../img/scout-logo.png', 150px, 93px);
+      // .img-retina('../img/scout-logo.png', 150px, 93px);
     }
   }
   .banner__title {
@@ -17,9 +17,14 @@
     .button.join {
       padding: 8px 16px 10px;
       font-size: 22px;
+      transition: all 0.2s ease;
       span {
         display: inline-block;
         margin-right: 0.25em;
+      }
+      &:hover, &:focus {
+        transform: scale(1.1);
+        background-color: darken(@scout-green, 5%);
       }
     }
   }
