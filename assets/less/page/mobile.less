@@ -199,12 +199,27 @@
 
 .page-slideshow {
     .clearfix;
+    position: relative;
+    
     .page-slideshow__inner {
         .make-column(12);
+        
     }
     .page-slideshow__slick {
         border: 5px solid @brand-primary;
         border-radius: 6px;
+        position: relative;
+        &:after {
+            position: absolute;
+            display: inline-block;
+            bottom: 90%;
+            left: 50%;
+            font-family: "fontawesome";
+            content: @fa-var-angle-down;
+            color: @brand-primary;
+            height: 30px;
+            width: 30px;
+        }
     }
     .page-slideshow__item {
         .bg-cover(480px);
@@ -235,6 +250,7 @@
 }
 
 .section-logos {
+    padding-top: 0 !important;
     .section-logos__header {
         margin: 0 auto;
         max-width: @container-desktop;
@@ -243,7 +259,7 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin: 0 auto;
+        margin: 30px auto 0;
         max-width: @container-desktop;
     }
     .section {
