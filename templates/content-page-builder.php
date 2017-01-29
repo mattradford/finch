@@ -12,7 +12,6 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 
         <?php if( get_row_layout() == 'one_column' ): ?> 
             <div class="page__builder__container one_column <?php the_sub_field('additional_classes');?>" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
-            <div class="page__wrap">
 
             <?php if(get_sub_field('wysiwyg_editor')) : ?>
                 <div class="inner">
@@ -20,12 +19,10 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                 </div>
             <?php endif; ?>
 
-            </div>                
             </div>
 
         <?php elseif( get_row_layout() == 'call_to_action' ): ?> 
            <div class="page__builder__container one_column call_to_action" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
-            <div class="page__wrap">
 
                 <?php if(get_sub_field('heading')) : ?>
                 <div class="wysiwyg_editor">
@@ -35,12 +32,10 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                     </div>
                 </div>
             <?php endif; ?>
-            </div>                
            </div>
 
         <?php elseif( get_row_layout() == 'two_column' ): ?>
             <div class="page__builder__container two_column <?php the_sub_field('additional_classes');?>" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
-            <div class="page__wrap">
 
                 <?php if(get_sub_field('wysiwyg_editor')) : ?>
                     <div class="wysiwyg_editor"><div class="inner"><?php the_sub_field('wysiwyg_editor'); ?></div></div>
@@ -49,13 +44,13 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                     <div class="wysiwyg_editor"><div class="inner"><?php the_sub_field('wysiwyg_editor_two'); ?></div></div>
                 <?php endif; ?>
 
-                </div>                
            </div>
         
      
         
         <?php elseif( get_row_layout() == 'leaders' ): ?> 
            <div class="page__builder__container one_column leaders">
+           
                <?php if( get_sub_field( 'title' ) ) {
                    echo '<h2>' . get_sub_field( 'title' ) . '</h2>';
                } ?>
@@ -95,28 +90,10 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                ?>
 
            </div>
-
-
-        <?php elseif( get_row_layout() == 'blockquote' ): ?>
-            <div class="page__builder__container blockquote">
-            <div class="page__wrap">
-
-
-                <div class="blockquote__inner">
-                <?php if(get_sub_field('quote')) : ?>
-                    <blockquote><?php the_sub_field('quote'); ?></blockquote>
-                    <?php if(get_sub_field('citation')) : ?><cite><?php the_sub_field('citation'); ?></cite><?php endif; ?>
-                <?php endif; ?>
-               </div>
-
-                </div>                
-                
-            </div>        
         
         <?php elseif( get_row_layout() == 'accordion' ): ?>
             <div class="page__builder__container accordion__wrapper">
             
-                <div class="page__wrap">
 
 
                 <div class="accordion__inner">
@@ -131,7 +108,6 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                 </div>
                     
              
-                </div>                
            
             </div>       
         
@@ -139,7 +115,6 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
         
         <?php elseif( get_row_layout() == 'slideshow' ): ?>
             <div class="page__builder__container page-slideshow">
-             <div class="page__wrap">
                <div class="page-slideshow__inner">
                     <?php 
                         $images = get_sub_field('images');
@@ -154,14 +129,12 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                             </div>
                     <?php endif; ?>
                </div>
-            </div>   
             </div>
         
         
         
         <?php elseif( get_row_layout() == 'gallery' ): ?>
             <div class="page__builder__container page-gallery">
-             <div class="page__wrap">
 
                     <?php 
                         $images = get_sub_field('images');
@@ -180,7 +153,6 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                           
                     <?php endif; ?>
 
-            </div>   
             </div>
 
         
