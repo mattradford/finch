@@ -6624,22 +6624,24 @@ html {
   .main .page__header h1 {
     font-size: 40px;
   }
-  .breadcrumbs-search .page__row {
+  .breadcrumbs-search .page__wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   .breadcrumbs-search .breadcrumbs {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
     margin-bottom: 0;
     padding-top: 6px;
+    width: auto;
+    float: none;
   }
   .breadcrumbs-search .search {
     -ms-flex-item-align: end;
         align-self: flex-end;
     text-align: right;
+    width: auto;
+    float: none;
+    margin-left: auto;
   }
   .breadcrumbs-search .search .search-submit {
     margin-top: 0;

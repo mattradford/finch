@@ -1,108 +1,69 @@
 .banner {
-
     padding: 20px 0 24px;
-
     .banner__row {
-
         display: flex;
         align-items: center;
         justify-content: flex-start;
-
     }
-
     .banner__logo {
-
         .logo {
-
             display: inline-block;
             // Requires a double-size image.
             .img-retina('../img/scout-logo.png', 100px, 62px);
-
         }
-
     }
-
     .banner__title {
-
         span {
-
             font-size: 24px;
             vertical-align: middle;
-
-
             &:first-child {
-
                 margin-left: 40px;
-
             }
-
         }
-
     }
-
     .banner__button {
-
         text-align: right;
         flex-grow: 1;
-
         .button {
-
             background-color: @scout-green;
             border-radius: 3px;
             font-family: @serif;
-
         }
-
     }
 }
 
 // Main content area
 .main {
-
     .page__header {
-
         &.page__featured-image {
-
             height: 380px;
-
         }
-
         h1 {
-
             font-size: 40px;
-
         }
-
     }
-
-  
-
-
-
-
 }
+
 .breadcrumbs-search {
-  .page__row {
-    display: flex;
-  }
-  .breadcrumbs {
-    flex-grow: 1;
-    margin-bottom: 0;
-    padding-top: 6px;
-  }
-  .search {
-    align-self: flex-end;
-    text-align: right;
-
-    .search-submit {
-      margin-top: 0;
-      margin-left: 3px;
+    .page__wrap{
+        display: flex;
     }
-  }
-}
-
-.content-info {
-
-
-
+    .breadcrumbs {
+        // flex-grow: 1;
+        margin-bottom: 0;
+        padding-top: 6px;
+        width: auto;
+        float: none;
+    }
+    .search {
+        align-self: flex-end;
+        text-align: right;
+        width: auto;
+        float: none;
+        margin-left: auto;
+        .search-submit {
+            margin-top: 0;
+            margin-left: 3px;
+        }
+    }
 }
