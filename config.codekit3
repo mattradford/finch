@@ -1137,7 +1137,7 @@
 		"sM": 0,
 		"sU": 0
 		},
-	"\/assets\/less\/components\/gravity-forms.less": {
+	"\/assets\/less\/components\/gravity-forms\/mobile.less": {
 		"aP": 0,
 		"bl": 0,
 		"dJ": 0,
@@ -1146,7 +1146,24 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/assets\/less\/css\/gravity-forms.css",
+		"oAP": "\/assets\/less\/components\/css\/mobile.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/assets\/less\/components\/gravity-forms\/phablet.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/assets\/less\/components\/css\/phablet.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,

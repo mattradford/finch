@@ -2160,7 +2160,33 @@ select[multiple].input-lg {
 .gform_wrapper form {
   margin-bottom: 20px;
 }
+.gform_wrapper form .gfield label {
+  font-weight: normal;
+}
+.gform_wrapper form .gfield.field_sublabel_below .name_first label,
+.gform_wrapper form .gfield.field_sublabel_above .name_first label,
+.gform_wrapper form .gfield.ginput_container_address .name_first label,
+.gform_wrapper form .gfield.field_sublabel_below .name_last label,
+.gform_wrapper form .gfield.field_sublabel_above .name_last label,
+.gform_wrapper form .gfield.ginput_container_address .name_last label,
+.gform_wrapper form .gfield.field_sublabel_below .address_zip label,
+.gform_wrapper form .gfield.field_sublabel_above .address_zip label,
+.gform_wrapper form .gfield.ginput_container_address .address_zip label,
+.gform_wrapper form .gfield.field_sublabel_below .address_line_1 label,
+.gform_wrapper form .gfield.field_sublabel_above .address_line_1 label,
+.gform_wrapper form .gfield.ginput_container_address .address_line_1 label,
+.gform_wrapper form .gfield.field_sublabel_below .address_line_2 label,
+.gform_wrapper form .gfield.field_sublabel_above .address_line_2 label,
+.gform_wrapper form .gfield.ginput_container_address .address_line_2 label,
+.gform_wrapper form .gfield.field_sublabel_below .address_city label,
+.gform_wrapper form .gfield.field_sublabel_above .address_city label,
+.gform_wrapper form .gfield.ginput_container_address .address_city label {
+  font-size: 14px;
+}
 .gform_wrapper form li.nolabel label.gfield_label {
+  display: none;
+}
+.gform_wrapper form li.hidden-label label.gfield_label {
   display: none;
 }
 .gform_wrapper form li.nosublabel .ginput_container label {
@@ -6493,6 +6519,10 @@ html {
   margin-top: 15px;
 }
 @media (min-width: 480px) {
+  .gform_wrapper form li.hidden-label label.gfield_label {
+    display: inline-block;
+    visibility: hidden;
+  }
   .banner .banner__title span:nth-child(2) {
     display: inline-block;
   }

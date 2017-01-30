@@ -16,6 +16,8 @@ if( function_exists('acf_add_options_sub_page') )
 
 }
 
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
 // Remove Yoast SEO meta from users below Editor
 add_action('add_meta_boxes', 'yoast_is_toast2', 99);
 function yoast_is_toast2(){
