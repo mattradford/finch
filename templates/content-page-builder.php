@@ -11,7 +11,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
     <?php while ( have_rows('page_builder') ) : the_row(); ?>
 
         <?php if( get_row_layout() == 'one_column' ): ?> 
-            <div class="page__builder__container one_column <?php the_sub_field('additional_classes');?>" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
+            <div class="page__builder__container one_column <?php the_sub_field('additional_classes');?>">
 
             <?php if(get_sub_field('wysiwyg_editor')) : ?>
                 <div class="inner">

@@ -2,76 +2,18 @@
 
 jQuery(document).ready(function ($) {
 
-  // if($(window).width()<991){
-
-  //     $(".navbar--header").addClass("mobile-menu");
-
-  //     $(".navbar--header nav").dlmenu({
-
-  //         animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
-  //     });
-  // }
+ 
 
   $("#find-out-more").click(function () {
+    console.log('wut')
     $('html, body').animate({
       scrollTop: $("#find-out-more").offset().scrollTop}, 2000);
   });
 
-  $(".page-slideshow__slick").slick();
-
-  $('.page-gallery').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    gallery: {
-      enabled: true
-    }
-  });
+ 
 
 });
 
-jQuery(window).resize(function () {
-
-  // if(jQuery(window).width()<990) {
-  //     // on resize down from desktop, add mobile menu classes & initiate dlmenu
-  //     if(!jQuery(".navbar--header").hasClass("mobile-menu")) {
-
-  //         jQuery(".navbar--header").addClass("mobile-menu");
-  //         jQuery("navbar--header nav").dlmenu({
-  //             animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
-  //         });
-  //     }
-
-
-  // }else{
-  //     // on resize up, remove mobile menu classes & unbind dlmenu
-  //     jQuery(".navbar--header").removeClass("mobile-menu");
-  //     jQuery(".dl-back").remove();
-  //     jQuery(".navbar--header nav li, .nav-control").unbind("click.dlmenu");
-
-  // }
-
-});
-
-//$(function() {
-//    $('.item').matchHeight();
-//});
-
-// PAGE-SPECIFIC SCRIPTS
-/* ========================================================================
- * DOM-based Routing
- * Based on http://goo.gl/EUTi53 by Paul Irish
- *
- * Only fires on body classes that match. If a body class contains a dash,
- * replace the dash with an underscore when adding it to the object below.
- *
- * .noConflict()
- * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
- *
- * Google CDN, Latest jQuery
- * To use the default WordPress version of jQuery, go to lib/config.php and
- * remove or comment out: add_theme_support('jquery-cdn');
- * ======================================================================== */
 
 (function ($) {
 
