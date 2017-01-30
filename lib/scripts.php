@@ -43,7 +43,7 @@ function roots_scripts() {
     // wp_enqueue_script('google-map-init');
     wp_enqueue_script('magnific-popup');
     // wp_enqueue_script('accordion-js');
-    wp_enqueue_script('mobile-menu');
+    // wp_enqueue_script('mobile-menu');
 
   //  Enqueue for a specific CPT
    if (is_page_template('where-we-meet.php')) {

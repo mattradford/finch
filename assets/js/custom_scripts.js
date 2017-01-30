@@ -1,56 +1,54 @@
 // GLOBAL SCRIPTS
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 
-    // if($(window).width()<991){
+  // if($(window).width()<991){
 
-    //     $(".navbar--header").addClass("mobile-menu");
+  //     $(".navbar--header").addClass("mobile-menu");
 
-    //     $(".navbar--header nav").dlmenu({
+  //     $(".navbar--header nav").dlmenu({
 
-    //         animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
-    //     });
-    // }
+  //         animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+  //     });
+  // }
 
- $("#find-out-more").click(function() {
-      $('html, body').animate({
-          scrollTop: $("#find-out-more").offset().scrollTop
-        }, 2000);
+  $("#find-out-more").click(function () {
+    $('html, body').animate({
+      scrollTop: $("#find-out-more").offset().scrollTop}, 2000);
   });
 
-    $(".page-slideshow__slick").slick();
+  $(".page-slideshow__slick").slick();
 
-    $('.page-gallery').magnificPopup({
-          delegate: 'a',
-          type: 'image',
-          gallery:{enabled:true}
-        });
-
-
-   
+  $('.page-gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
 
 });
 
-jQuery(window).resize(function() {
+jQuery(window).resize(function () {
 
-    // if(jQuery(window).width()<990) {
-    //     // on resize down from desktop, add mobile menu classes & initiate dlmenu
-    //     if(!jQuery(".navbar--header").hasClass("mobile-menu")) {
+  // if(jQuery(window).width()<990) {
+  //     // on resize down from desktop, add mobile menu classes & initiate dlmenu
+  //     if(!jQuery(".navbar--header").hasClass("mobile-menu")) {
 
-    //         jQuery(".navbar--header").addClass("mobile-menu");
-    //         jQuery("navbar--header nav").dlmenu({
-    //             animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
-    //         });
-    //     }
+  //         jQuery(".navbar--header").addClass("mobile-menu");
+  //         jQuery("navbar--header nav").dlmenu({
+  //             animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+  //         });
+  //     }
 
 
-    // }else{
-    //     // on resize up, remove mobile menu classes & unbind dlmenu
-    //     jQuery(".navbar--header").removeClass("mobile-menu");
-    //     jQuery(".dl-back").remove();
-    //     jQuery(".navbar--header nav li, .nav-control").unbind("click.dlmenu");
+  // }else{
+  //     // on resize up, remove mobile menu classes & unbind dlmenu
+  //     jQuery(".navbar--header").removeClass("mobile-menu");
+  //     jQuery(".dl-back").remove();
+  //     jQuery(".navbar--header nav li, .nav-control").unbind("click.dlmenu");
 
-    // }
+  // }
 
 });
 
@@ -75,51 +73,51 @@ jQuery(window).resize(function() {
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
 
-(function($) {
+(function ($) {
 
-// Use this variable to set up the common and page specific functions. If you
-// rename this variable, you will also need to rename the namespace below.
-var Roots = {
-  // All pages
-  common: {
-    init: function() {
-      // JavaScript to be fired on all pages
+  // Use this variable to set up the common and page specific functions. If you
+  // rename this variable, you will also need to rename the namespace below.
+  var Roots = {
+    // All pages
+    common: {
+      init: function () {
+        // JavaScript to be fired on all pages
+      }
+    },
+    // Home page
+    home: {
+      init: function () {
+        // JavaScript to be fired on the home page
+        $('.fp__callout').attr('id', 'find-out-more');
+      }
+    },
+    // About us page, note the change from about-us to about_us.
+    about_us: {
+      init: function () {
+        // JavaScript to be fired on the about us page
+      }
     }
-  },
-  // Home page
-  home: {
-    init: function() {
-      // JavaScript to be fired on the home page
-    $('.fp__callout').attr('id', 'find-out-more');
-    }
-  },
-  // About us page, note the change from about-us to about_us.
-  about_us: {
-    init: function() {
-      // JavaScript to be fired on the about us page
-    }
-  }
-};
+  };
 
-// The routing fires all common scripts, followed by the page specific scripts.
-// Add additional events for more control over timing e.g. a finalize event
-var UTIL = {
-  fire: function(func, funcname, args) {
-    var namespace = Roots;
-    funcname = (funcname === undefined) ? 'init' : funcname;
-    if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
-      namespace[func][funcname](args);
+  // The routing fires all common scripts, followed by the page specific scripts.
+  // Add additional events for more control over timing e.g. a finalize event
+  var UTIL = {
+    fire: function (func, funcname, args) {
+      var namespace = Roots;
+      funcname = (funcname === undefined) ? 'init' : funcname;
+      if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
+        namespace[func][funcname](args);
+      }
+    },
+    loadEvents: function () {
+      UTIL.fire('common');
+
+      $.each(document.body.className.replace(/-/g, '_').split(/\s+/), function (i, classnm) {
+        UTIL.fire(classnm);
+      });
     }
-  },
-  loadEvents: function() {
-    UTIL.fire('common');
+  };
 
-    $.each(document.body.className.replace(/-/g, '_').split(/\s+/),function(i,classnm) {
-      UTIL.fire(classnm);
-    });
-  }
-};
-
-$(document).ready(UTIL.loadEvents);
+  $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
