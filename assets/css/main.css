@@ -2359,6 +2359,11 @@ textarea.gform_wrapper .ginput_container textarea {
 .gform_wrapper .ginput_container_date img {
   margin-top: 8px;
 }
+.gform_wrapper .ginput_container input:focus,
+.gform_wrapper .ginput_container select:focus,
+.gform_wrapper .ginput_container textarea:focus {
+  box-shadow: none;
+}
 .ui-widget {
   background: #4d2177;
   border: none;
