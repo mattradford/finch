@@ -2,15 +2,24 @@
 
 jQuery(document).ready(function ($) {
 
- 
 
-  $("#find-out-more").click(function () {
-    console.log('wut')
-    $('html, body').animate({
-      scrollTop: $("#find-out-more").offset().scrollTop}, 2000);
+  $(".button-green").on("click", function (e) {
+    e.preventDefault();
+    $("body, html").animate({
+      scrollTop: $($(this).attr('href')).offset().top
+    }, 600);
   });
 
- 
+  $(".page-slideshow__slick").slick();
+
+  $('.page-gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
+
 
 });
 
