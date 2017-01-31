@@ -11,7 +11,7 @@
     }
     form {
         margin-bottom: 20px;
-        .gfield {
+        li.gfield {
             label {
                 font-weight: normal;
             }
@@ -29,6 +29,7 @@
                     }
                 }
             }
+          
         }
         // Extra labels to show/hide labels
         li.nolabel {
@@ -109,7 +110,12 @@
         .button();
     }
     .validation_error,
-    .validation_message {}
+    .validation_message {
+        
+    }
+    .validation_error {
+        display: none;
+    }
     #gforms_confirmation_message {}
     ul.gfield_checkbox,
     ul.gfield_radio {
@@ -137,18 +143,26 @@
         }
     }
     .ginput_container_date {
-        input {
-            width: 225px;
-            float: left;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-        img {
-            margin-top: 8px;
-        }
+        // input {
+        //     width: 225px;
+        //     float: left;
+        //     margin-right: 10px;
+        //     margin-bottom: 10px;
+        // }
+        // img {
+        //     margin-top: 8px;
+        // }
+    }
+    .gform_page_footer {
+        border-top: 0;
     }
 }
 
 .gform_wrapper .ginput_container input:focus, .gform_wrapper .ginput_container select:focus, .gform_wrapper .ginput_container textarea:focus {
     box-shadow: none;
+}
+
+.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: transparent;
+    border: 0;
 }

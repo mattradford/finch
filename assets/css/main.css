@@ -59,6 +59,8 @@
       touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  text-decoration: none !important;
+  text-decoration: none;
 }
 .button:hover,
 .button:focus,
@@ -85,6 +87,8 @@
       touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  text-decoration: none !important;
+  text-decoration: none;
 }
 .button-grey:hover,
 .button-grey:focus,
@@ -111,6 +115,8 @@
       touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  text-decoration: none !important;
+  text-decoration: none;
 }
 .button-orange:hover,
 .button-orange:focus,
@@ -137,6 +143,8 @@
       touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  text-decoration: none !important;
+  text-decoration: none;
 }
 .button-green:hover,
 .button-green:focus,
@@ -148,6 +156,7 @@
 }
 .button-lg {
   padding: 10px 60px;
+  text-decoration: none;
 }
 .desaturate {
   -webkit-filter: grayscale(100%);
@@ -763,6 +772,26 @@ address {
   margin-bottom: 27px;
   font-style: normal;
   line-height: 1.5;
+}
+main a {
+  text-decoration: underline;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+main a:hover,
+main a:focus {
+  color: white;
+  background: #4d2177;
+}
+main a[href^="tel"] {
+  text-decoration: none;
+  color: #001323;
+  cursor: default;
+}
+main a[href^="tel"]:hover,
+main a[href^="tel"]:focus {
+  color: #001323;
+  background: none;
 }
 .container {
   margin-right: auto;
@@ -2160,27 +2189,27 @@ select[multiple].input-lg {
 .gform_wrapper form {
   margin-bottom: 20px;
 }
-.gform_wrapper form .gfield label {
+.gform_wrapper form li.gfield label {
   font-weight: normal;
 }
-.gform_wrapper form .gfield.field_sublabel_below .name_first label,
-.gform_wrapper form .gfield.field_sublabel_above .name_first label,
-.gform_wrapper form .gfield.ginput_container_address .name_first label,
-.gform_wrapper form .gfield.field_sublabel_below .name_last label,
-.gform_wrapper form .gfield.field_sublabel_above .name_last label,
-.gform_wrapper form .gfield.ginput_container_address .name_last label,
-.gform_wrapper form .gfield.field_sublabel_below .address_zip label,
-.gform_wrapper form .gfield.field_sublabel_above .address_zip label,
-.gform_wrapper form .gfield.ginput_container_address .address_zip label,
-.gform_wrapper form .gfield.field_sublabel_below .address_line_1 label,
-.gform_wrapper form .gfield.field_sublabel_above .address_line_1 label,
-.gform_wrapper form .gfield.ginput_container_address .address_line_1 label,
-.gform_wrapper form .gfield.field_sublabel_below .address_line_2 label,
-.gform_wrapper form .gfield.field_sublabel_above .address_line_2 label,
-.gform_wrapper form .gfield.ginput_container_address .address_line_2 label,
-.gform_wrapper form .gfield.field_sublabel_below .address_city label,
-.gform_wrapper form .gfield.field_sublabel_above .address_city label,
-.gform_wrapper form .gfield.ginput_container_address .address_city label {
+.gform_wrapper form li.gfield.field_sublabel_below .name_first label,
+.gform_wrapper form li.gfield.field_sublabel_above .name_first label,
+.gform_wrapper form li.gfield.ginput_container_address .name_first label,
+.gform_wrapper form li.gfield.field_sublabel_below .name_last label,
+.gform_wrapper form li.gfield.field_sublabel_above .name_last label,
+.gform_wrapper form li.gfield.ginput_container_address .name_last label,
+.gform_wrapper form li.gfield.field_sublabel_below .address_zip label,
+.gform_wrapper form li.gfield.field_sublabel_above .address_zip label,
+.gform_wrapper form li.gfield.ginput_container_address .address_zip label,
+.gform_wrapper form li.gfield.field_sublabel_below .address_line_1 label,
+.gform_wrapper form li.gfield.field_sublabel_above .address_line_1 label,
+.gform_wrapper form li.gfield.ginput_container_address .address_line_1 label,
+.gform_wrapper form li.gfield.field_sublabel_below .address_line_2 label,
+.gform_wrapper form li.gfield.field_sublabel_above .address_line_2 label,
+.gform_wrapper form li.gfield.ginput_container_address .address_line_2 label,
+.gform_wrapper form li.gfield.field_sublabel_below .address_city label,
+.gform_wrapper form li.gfield.field_sublabel_above .address_city label,
+.gform_wrapper form li.gfield.ginput_container_address .address_city label {
   font-size: 14px;
 }
 .gform_wrapper form li.nolabel label.gfield_label {
@@ -2318,6 +2347,8 @@ textarea.gform_wrapper .ginput_container textarea {
       touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  text-decoration: none !important;
+  text-decoration: none;
 }
 .gform_wrapper .gform_button:hover,
 .gform_wrapper .gform_button:focus,
@@ -2326,6 +2357,9 @@ textarea.gform_wrapper .ginput_container textarea {
   color: white;
   background-color: #5e7408;
   text-decoration: none;
+}
+.gform_wrapper .validation_error {
+  display: none;
 }
 .gform_wrapper ul.gfield_checkbox li,
 .gform_wrapper ul.gfield_radio li {
@@ -2350,150 +2384,18 @@ textarea.gform_wrapper .ginput_container textarea {
 .gform_wrapper .ginput_container_address span {
   font-size: 0.8em;
 }
-.gform_wrapper .ginput_container_date input {
-  width: 225px;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-.gform_wrapper .ginput_container_date img {
-  margin-top: 8px;
+.gform_wrapper .gform_page_footer {
+  border-top: 0;
 }
 .gform_wrapper .ginput_container input:focus,
 .gform_wrapper .ginput_container select:focus,
 .gform_wrapper .ginput_container textarea:focus {
   box-shadow: none;
 }
-.ui-widget {
-  background: #4d2177;
-  border: none;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  box-shadow: 0 1px 3px #000000;
-}
-.ui-datepicker {
-  padding: 0;
-}
-.ui-datepicker-header {
-  border: none;
-  border-bottom: 1px solid #4d2177;
-  background: transparent;
-  font-weight: normal;
-  font-size: 11px;
-  text-transform: uppercase;
-  padding-top: 7px;
-}
-.ui-datepicker-header .ui-state-hover {
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-}
-.ui-datepicker .ui-datepicker-title {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-  text-align: center;
-}
-.ui-datepicker .ui-datepicker-title select {
-  display: block;
-  width: 100%;
-  height: 41px;
-  padding: 6px 12px;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #555555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  width: 90px;
-  float: left;
-  margin-left: 40px;
-}
-.ui-datepicker .ui-datepicker-title select:focus {
-  border-color: #66afe9;
-  outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-.ui-datepicker .ui-datepicker-title select::-moz-placeholder {
-  color: #777777;
-  opacity: 1;
-}
-.ui-datepicker .ui-datepicker-title select:-ms-input-placeholder {
-  color: #777777;
-}
-.ui-datepicker .ui-datepicker-title select::-webkit-input-placeholder {
-  color: #777777;
-}
-.ui-datepicker .ui-datepicker-title select[disabled],
-.ui-datepicker .ui-datepicker-title select[readonly],
-fieldset[disabled] .ui-datepicker .ui-datepicker-title select {
-  cursor: not-allowed;
-  background-color: #eeeeee;
-  opacity: 1;
-}
-textarea.ui-datepicker .ui-datepicker-title select {
-  height: auto;
-}
-.ui-datepicker .ui-datepicker-prev-hover,
-.ui-datepicker .ui-datepicker-next-hover,
-.ui-datepicker .ui-datepicker-next,
-.ui-datepicker .ui-datepicker-prev {
-  border: none;
-  color: #efefef;
-  padding: 0 7px;
-}
-.ui-datepicker .ui-datepicker-next {
-  float: right;
-}
-.ui-datepicker .ui-datepicker-next span,
-.ui-datepicker .ui-datepicker-prev span {
-  margin-top: 0;
-  top: 0;
-  font-weight: normal;
-}
-.ui-datepicker table {
-  margin: 0;
-  width: 100%;
-  min-width: 300px;
-}
-.ui-datepicker th {
-  padding: 3em 0;
-  color: #ccaee9;
-  font-size: 8px;
-  font-weight: normal;
-  text-shadow: 0 0 2px #e5d6f4;
-  text-transform: uppercase;
-  border: none;
-}
-.ui-datepicker td {
-  border: none;
-  padding: 0;
-  text-align: center;
-}
-td .ui-state-default {
-  background: transparent;
-  border: none;
-  text-align: center;
-  padding: 1em 0;
-  margin: 0;
-  font-weight: normal;
-  color: #efefef;
-  font-size: 12px;
-  display: block;
-}
-td .ui-state-active,
-td .ui-state-hover {
-  background: #000000;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+.gform_wrapper li.gfield.gfield_error,
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  background-color: transparent;
+  border: 0;
 }
 .gallery-row {
   padding: 13.5px 0;
@@ -6375,7 +6277,7 @@ html {
           flex-direction: column;
   text-align: center;
   margin: 30px auto 0;
-  max-width: 960px;
+  max-width: 1140px;
 }
 .section-logos .section {
   padding: 10px 30px;
@@ -6490,6 +6392,7 @@ html {
       touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  text-decoration: none !important;
   padding: 10px 60px;
   color: white;
   text-decoration: none;

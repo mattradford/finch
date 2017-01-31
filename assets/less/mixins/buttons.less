@@ -19,6 +19,7 @@
     cursor: pointer;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     // white-space: nowrap;
+    text-decoration: none !important;
 
     &:hover, &:focus, &:active, &.active {
 
@@ -42,25 +43,27 @@
 .button {
 
     .button-variant(white, @scout-green, green);
+    text-decoration: none;
 
 }
 .button-grey {
 
     .button-variant(white, @scout-grey, #121212);
-
+      text-decoration: none;
 }
 .button-orange {
 
     .button-variant(white, @scout-orange, darken(@scout-orange,5%));
-
+      text-decoration: none;
 }
 .button-green {
 
     .button-variant(white, @scout-green, darken(@scout-green,5%));
-
+      text-decoration: none;
 }
 .button-lg {
 
     padding: 10px 60px;
-
+      text-decoration: none;
 }
+

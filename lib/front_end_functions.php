@@ -46,3 +46,48 @@ function wti_loginout_menu_link( $items, $args ) {
    }
    return $items;
 }
+
+// this code will run for form 420 only; change 420 to your form ID
+add_filter('gform_validation_1', 'verify_minimum_age');
+function verify_minimum_age($validation_result){
+
+
+    // retrieve the $form
+    $form = $validation_result['form'];
+
+        // date of birth is submitted in field 5 in the format YYYY-MM-DD
+        // change the 5 here to your field ID
+        $dob = rgpost('input_4');
+
+        // this the minimum age requirement we are validating
+        $minimum_age = 4;
+
+        // calculate age in years like a human, not a computer, based on the same birth date every year
+        $age = date('Y') - substr($dob, 0, 4);
+        if (strtotime(date('Y-m-d')) - strtotime(date('Y') . substr($dob, 4, 6)) < 0){
+            $age--;
+        }
+ 
+    // is $age less than the $minimum_age?
+    if( $age < $minimum_age ){
+ 
+        // set the form validation to false if age is less than the minimum age
+        $validation_result['is_valid'] = false;
+ 
+        // find field with ID of 5 and mark it as failed validation
+        foreach($form['fields'] as &$field){
+ 
+            // NOTE: replace 5 with the field you would like to mark invalid
+            if($field['id'] == '4'){
+                $field['failed_validation'] = true;
+                $field['validation_message'] = "Sorry, your child must be at least $minimum_age years of age to join the waiting list.";
+                break;
+            }
+ 
+        }
+ 
+    }
+    // assign modified $form object back to the validation result
+    $validation_result['form'] = $form;
+    return $validation_result;
+}

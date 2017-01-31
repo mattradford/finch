@@ -286,3 +286,23 @@ address {
   font-style: normal;
   line-height: @line-height-base;
 }
+main {
+ a {
+    text-decoration: underline;
+    transition: all 0.2s ease;
+    &:hover, &:focus {
+      color: white;
+      background: @link-color;
+    }
+    &[href^="tel"] {
+      text-decoration: none;
+      color: @text-color;
+      cursor: default;
+      &:hover, &:focus {
+        color:@text-color;
+        background: none;
+      }
+    }
+  }
+}
+
