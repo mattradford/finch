@@ -2212,6 +2212,35 @@ select[multiple].input-lg {
 .gform_wrapper form li.gfield.ginput_container_address .address_city label {
   font-size: 14px;
 }
+.gform_wrapper form li.gfield.child-birthday-check {
+  text-align: center;
+}
+.gform_wrapper form li.gfield.child-birthday-check label .gfield_required {
+  display: none;
+}
+.gform_wrapper form li.gfield.child-birthday-check .validation_message {
+  background-color: #dd4b39;
+  border: 1px solid #d73925;
+  margin: 20px 0;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px auto 0;
+  display: inline-block;
+  width: auto;
+  color: white;
+  text-align: center;
+  padding: 12px;
+}
+.gform_wrapper form li.gfield.child-birthday-check .validation_message a {
+  color: white;
+  text-decoration: underline;
+}
+.gform_wrapper form li.gfield.child-birthday-check .validation_message a:hover,
+.gform_wrapper form li.gfield.child-birthday-check .validation_message a:focus {
+  color: #dd4b39;
+  background-color: white;
+}
 .gform_wrapper form li.nolabel label.gfield_label {
   display: none;
 }
@@ -2386,6 +2415,7 @@ textarea.gform_wrapper .ginput_container textarea {
 }
 .gform_wrapper .gform_page_footer {
   border-top: 0;
+  text-align: center;
 }
 .gform_wrapper .ginput_container input:focus,
 .gform_wrapper .ginput_container select:focus,
@@ -2396,6 +2426,9 @@ textarea.gform_wrapper .ginput_container textarea {
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
   background-color: transparent;
   border: 0;
+}
+.ui-datepicker-title select {
+  color: #001323;
 }
 .gallery-row {
   padding: 13.5px 0;

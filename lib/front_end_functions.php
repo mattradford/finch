@@ -80,7 +80,7 @@ function verify_minimum_age($validation_result){
             // NOTE: replace 5 with the field you would like to mark invalid
             if($field['id'] == '4'){
                 $field['failed_validation'] = true;
-                $field['validation_message'] = "Sorry, your child must be at least $minimum_age years of age to join the waiting list.";
+                $field['validation_message'] = "Sorry, your child must be at least $minimum_age years old to join the waiting list.";
                 break;
             }
  

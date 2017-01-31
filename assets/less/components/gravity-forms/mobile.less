@@ -29,7 +29,23 @@
                     }
                 }
             }
-          
+          &.child-birthday-check {
+              text-align: center;
+              label {
+                  .gfield_required {
+                      display: none;
+                  }
+              }
+              .validation_message {
+                   .alert-red();
+                    margin: 20px auto 0;
+                    display: inline-block;
+                    width: auto;
+                    color: white;
+                    text-align: center;
+                    padding: 12px;
+              }
+          }
         }
         // Extra labels to show/hide labels
         li.nolabel {
@@ -155,6 +171,7 @@
     }
     .gform_page_footer {
         border-top: 0;
+        text-align: center;
     }
 }
 
@@ -165,4 +182,8 @@
 .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
     background-color: transparent;
     border: 0;
+}
+
+.ui-datepicker-title select {
+    color: @text-color;
 }
