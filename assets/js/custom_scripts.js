@@ -3,7 +3,7 @@
 jQuery(document).ready(function ($) {
 
 
-  $(".button-green").on("click", function (e) {
+  $(".home .page-slideshow__inner .button-green").on("click", function (e) {
     e.preventDefault();
     $("body, html").animate({
       scrollTop: $($(this).attr('href')).offset().top
