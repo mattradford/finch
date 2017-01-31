@@ -263,6 +263,11 @@
     }
     .section {
         padding: 10px 30px;
+        a {
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+            }
+        }
         img {
             .img-responsive(@display: inline-block);
         }

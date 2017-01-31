@@ -6315,6 +6315,11 @@ html {
 .section-logos .section {
   padding: 10px 30px;
 }
+.section-logos .section a:hover,
+.section-logos .section a:focus,
+.section-logos .section a:active {
+  background-color: transparent;
+}
 .section-logos .section img {
   display: inline-block;
   width: 100% \9;
