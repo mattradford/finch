@@ -10,6 +10,12 @@ jQuery(document).ready(function ($) {
     }, 600);
   });
 
+  $(".banner .nav-control").on("click", function (e) {
+    e.preventDefault();
+    $(".nav-control").toggleClass("active");
+    $(".navbar--header").toggleClass("active");
+  });
+
   $(".page-slideshow__slick").slick();
 
   $('.page-gallery').magnificPopup({

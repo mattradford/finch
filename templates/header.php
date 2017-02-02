@@ -12,12 +12,14 @@
             </div>
 
             <div class="banner__button">
-              <a href="#nav-dropdown" class="nav-control button">
-                <span><?php _e('Menu','finch'); ?></span>
-              </a>
+              
               <?php if(get_field('header_button_link','options')) { ?>
                 <a href="<?php the_field('header_button_link','options'); ?>" class="button join"><span><?php _e('Come And','finch'); ?></span><?php _e('Join Us','finch'); ?></a>
               <?php } ?>
+              <a href="#nav-dropdown" class="nav-control button">
+                <span class="open"><?php _e('Menu','finch'); ?></span>
+                <span class="close"><?php _e('Close','finch'); ?></span>
+              </a>
             </div>
     </div>
 </header>

@@ -1,5 +1,6 @@
-html {
-  height: 100%;
+html, body {
+  overflow-x: hidden;
+  position: relative;
 }
 .banner {
   background-color: @scout-purple;
@@ -47,6 +48,21 @@ html {
       padding: 5px;
       &.nav-control {
         background-color: @scout-orange;
+        transition: all 0.3s ease;
+        span {
+          min-width: 51px;
+        }
+        .close {
+          display: none;
+        }
+        &.active {
+          .open {
+            display: none;
+          }
+          .close {
+          display: block;
+        }
+        }
       }
       &.join {
         background-color: @scout-green;
