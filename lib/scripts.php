@@ -32,20 +32,20 @@ function roots_scripts() {
         wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/plugins/slick.min.js', array(), '', true );
         wp_register_script( 'google-map-init', get_template_directory_uri() . '/assets/js/plugins/google-map-init.min.js', array(), '', true );
         wp_register_script( 'magnific-popup', get_template_directory_uri() . '/assets/js/plugins/jquery.magnific-popup.min.js', array(), '', true );
-        wp_register_script( 'mobile-menu', get_template_directory_uri() . '/assets/js/plugins/mobile-menu.min.js', array(), '', true );
         wp_register_script( 'accordion-js', get_template_directory_uri() . '/assets/js/plugins/jquery.accordion.min.js', array(), '', true );
         wp_register_script( 'custom-scripts', get_template_directory_uri() . '/assets/js/custom_scripts.min.js', array(), '', true );
 
   }
 
     wp_enqueue_script('jquery');
-    wp_enqueue_script('slick');
-    // wp_enqueue_script('google-map-init');
-    wp_enqueue_script('magnific-popup');
     // wp_enqueue_script('accordion-js');
     // wp_enqueue_script('mobile-menu');
 
   //  Enqueue for a specific CPT
+   if (is_page_template('template-page-builder.php')) {
+       wp_enqueue_script('slick');
+        wp_enqueue_script('magnific-popup');
+   }
    if (is_page_template('where-we-meet.php')) {
        wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js', array(), '3', true);
        wp_enqueue_script('google-map-init');
@@ -82,3 +82,9 @@ function roots_jquery_local_fallback($src, $handle = null) {
   return $src;
 }
 add_action('wp_head', 'roots_jquery_local_fallback');
+
+// Remove head generator text, RSD and WLW manifest
+remove_action ('wp_head', 'wp_generator');
+remove_action ('wp_head', 'rsd_link');
+remove_action ('wp_head', 'wlwmanifest_link');
+remove_action ('wp_head', 'wp_shortlink_wp_head');

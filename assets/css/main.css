@@ -6068,6 +6068,9 @@ body {
 .section-logos {
   padding-top: 0 !important;
 }
+.section-logos > p {
+  padding: 0 10px;
+}
 .section-logos .section-logos__header {
   margin: 0 auto;
   max-width: 960px;
