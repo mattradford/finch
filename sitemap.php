@@ -51,7 +51,10 @@ Template Name: Sitemap
                     <time><?php echo the_date(); ?></time>
                   </div>
                 <?php } ?>
-                  <a class="button-green"><?php _e( 'More News', 'finch' ); ?></a>
+                <?php
+                $page_for_posts = get_option( 'page_for_posts' );
+                ?>
+                  <a class="button-green" href="<?php the_permalink( $page_for_posts ); ?>"><?php _e( 'More News', 'finch' ); ?></a>
                 <?php
                 } else {
                   echo '<span>';
