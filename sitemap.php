@@ -36,7 +36,7 @@ Template Name: Sitemap
                 $args = array(
                   'post_type'              => array( 'post' ),
                   'post_status'            => array( 'published' ),
-                  'nopaging'               => true,
+                  'nopaging'               => false,
                   'posts_per_page'         => '10',
                 );
 

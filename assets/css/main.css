@@ -6308,6 +6308,9 @@ body {
         justify-content: space-around;
     max-width: 960px;
   }
+  .page-template-sitemap .sitemap__wrap > div {
+    width: 50%;
+  }
 }
 @media (min-width: 768px) {
   h1,
