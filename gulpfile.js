@@ -20,6 +20,7 @@ var gulp = require('gulp'),
     svgmin          = require('gulp-svgmin');
     svgstore        = require('gulp-svgstore');
     uglify          = require('gulp-uglify');
+    wpPot          = require('gulp-wp-pot');
     projectURL      = '1finch.dev'; // Project URL. Could be something like localhost:8888.
 
 // BrowserSync
@@ -158,6 +159,17 @@ gulp.task('default', function () {
 gulp.task('svg', function () {
     gulp.start('svgstore')
 });
+
+// Generate .pot file
+gulp.task('wppot', function () {
+    return gulp.src('**/*.php')
+        .pipe(wpPot({
+            domain: 'finch',
+            package: 'finch'
+        }))
+        .pipe(gulp.dest('lang/finch.pot'));
+});
+
 
 // Watch task
 // What happens when user runs 'gulp watch'
