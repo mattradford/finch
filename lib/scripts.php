@@ -25,14 +25,17 @@ function roots_scripts() {
     wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/plugins/jquery.min.js', array(), null, false);
     add_filter('script_loader_src', 'roots_jquery_local_fallback', 10, 2);
   }
-
+  if (is_page_template('where-we-meet.php')) {
+    wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js', array(), '3', true);
+   //  wp_enqueue_script('google-map-init');
+}
   if (!is_admin()) {
 
         // The following output in the footer, after jQuery
-        wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/plugins/slick.min.js', array(), '', true );
-        wp_register_script( 'google-map-init', get_template_directory_uri() . '/assets/js/plugins/google-map-init.min.js', array(), '', true );
-        wp_register_script( 'magnific-popup', get_template_directory_uri() . '/assets/js/plugins/jquery.magnific-popup.min.js', array(), '', true );
-        wp_register_script( 'accordion-js', get_template_directory_uri() . '/assets/js/plugins/jquery.accordion.min.js', array(), '', true );
+        // wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/plugins/slick.min.js', array(), '', true );
+        // wp_register_script( 'google-map-init', get_template_directory_uri() . '/assets/js/plugins/google-map-init.min.js', array(), '', true );
+        // wp_register_script( 'magnific-popup', get_template_directory_uri() . '/assets/js/plugins/jquery.magnific-popup.min.js', array(), '', true );
+        // wp_register_script( 'accordion-js', get_template_directory_uri() . '/assets/js/plugins/jquery.accordion.min.js', array(), '', true );
         wp_register_script( 'custom-scripts', get_template_directory_uri() . '/assets/js/custom_scripts.min.js', array(), '', true );
 
   }
@@ -42,14 +45,11 @@ function roots_scripts() {
     // wp_enqueue_script('mobile-menu');
 
   //  Enqueue for a specific CPT
-   if (is_page_template('template-page-builder.php')) {
-       wp_enqueue_script('slick');
-        wp_enqueue_script('magnific-popup');
-   }
-   if (is_page_template('where-we-meet.php')) {
-       wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js', array(), '3', true);
-       wp_enqueue_script('google-map-init');
-   }
+  //  if (is_page_template('template-page-builder.php')) {
+  //      wp_enqueue_script('slick');
+  //       wp_enqueue_script('magnific-popup');
+  //  }
+  
 
     wp_enqueue_script('custom-scripts');
 }

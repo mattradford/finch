@@ -49,13 +49,13 @@ gulp.task( 'browsersync', function() {
 // Process the main CSS file
 // autoprefixer must preceed sourcemap, otherwise gulp will error
 gulp.task('less-main', function () {
-    return gulp.src('./src/less/style.less')
+    return gulp.src('./src/less/main.less')
         .pipe(sourcemaps.init())
-        .pipe(less({paths: ['./src/less/']}))
+        .pipe(less({paths: ['./assets/css/']}))
         .pipe(autoprefixer())
         .pipe(minifycss())
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('./assets/css/'))
         .pipe( browsersync.stream() ) // Reloads style.css if that is enqueued.
         .pipe(notify({message: 'less-main completed'}));
 });
@@ -84,12 +84,11 @@ gulp.task('less-wp-login', function () {
 // Combine all js files to a single file, output as minified & non-minified
 gulp.task('scripts', function () {
     return gulp.src([
-            // 'src/js/lib/slick.js',
-            // 'src/js/lib/jquery.flexslider.min.js',
-            // 'src/js/lib/google-map-init.js',
+            'src/js/plugins/slick.js',
+            'src/js/plugins/google-map-init.js',
             // 'src/js/lib/jquery.accordion.js',
             // 'src/js/lib/jquery.magnific-popup.js',
-            'src/js/src/*.js'
+            'src/js/*.js'
         ])
         .pipe(concat('custom_scripts.js'))
         .pipe(gulp.dest('assets/js'))
@@ -151,7 +150,7 @@ gulp.task('markup', function() {
 // Default task
 // What happens when user runs 'gulp'
 gulp.task('default', function () {
-    gulp.start('less-main', 'less-wp-editor', 'less-wp-login', 'image-optimise', 'svgstore', 'font-copy')
+    gulp.start('less-main', 'less-wp-editor', 'less-wp-login', 'image-optimise', 'svgstore', 'font-copy', 'scripts')
 });
 
 // SVG task

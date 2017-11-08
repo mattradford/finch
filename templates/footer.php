@@ -28,10 +28,6 @@
 
             </div>
         </div>
-
-      
-      
-      
   </div>
 </footer>
 
