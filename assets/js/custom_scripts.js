@@ -16,15 +16,15 @@ jQuery(document).ready(function ($) {
     $(".navbar--header").toggleClass("active");
   });
 
-  $(".page-slideshow__slick").slick();
+  // $(".page-slideshow__slick").slick();
 
-  $('.page-gallery').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    gallery: {
-      enabled: true
-    }
-  });
+  // $('.page-gallery').magnificPopup({
+  //   delegate: 'a',
+  //   type: 'image',
+  //   gallery: {
+  //     enabled: true
+  //   }
+  // });
  
 });
 

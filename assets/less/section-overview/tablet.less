@@ -12,9 +12,11 @@
         }
       }
       a {
-
-        span {
-
+        transition: all 0.2s ease;
+        
+        &:hover, &:focus {
+          transform: scale(1.1);
+          background-color: darken(@scout-green, 5%);
         }
       }
     }

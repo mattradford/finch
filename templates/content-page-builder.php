@@ -11,7 +11,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
     <?php while ( have_rows('page_builder') ) : the_row(); ?>
 
         <?php if( get_row_layout() == 'one_column' ): ?> 
-            <div class="page__builder__container one_column <?php the_sub_field('additional_classes');?>">
+            <div class="page__builder__container one_column <?php the_sub_field('class');?>">
 
             <?php if(get_sub_field('wysiwyg_editor')) : ?>
                 <div class="inner">
@@ -35,7 +35,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
            </div>
 
         <?php elseif( get_row_layout() == 'two_column' ): ?>
-            <div class="page__builder__container two_column <?php the_sub_field('additional_classes');?>" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
+            <div class="page__builder__container two_column <?php the_sub_field('class');?>" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
 
                 <?php if(get_sub_field('wysiwyg_editor')) : ?>
                     <div class="wysiwyg_editor"><div class="inner"><?php the_sub_field('wysiwyg_editor'); ?></div></div>
@@ -61,10 +61,12 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                 ?>
                     <div class="leader">
                         <?php 
-                        $imageArray = get_sub_field( 'photo' );
-                        $imageAlt = $imageArray['alt'];
-                        $imageURL = $imageArray['sizes']['thumbnail'];
-                        echo '<img src="'.$imageURL.'" alt="'.$imageAlt.'" class="leader__image">';
+                        if ( get_sub_field( 'photo' ) ) {
+                            $imageID = get_sub_field( 'photo' );
+                            echo wp_get_attachment_image( $imageID  );
+                        } else {
+                            echo '<img src="' . get_stylesheet_directory_uri() .'/assets/img/default-person.png" alt="Default leader image" height=150 width=150>';
+                        }
                         ?>
                         <div class="leader__details">
                             <?php echo get_sub_field( 'title' ) ? '<h3>' . get_sub_field( 'title' ) . '</h3>' : ''; ?>
@@ -135,25 +137,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 
            </div>
         
-        <?php elseif( get_row_layout() == 'accordion' ): ?>
-            <div class="page__builder__container accordion__wrapper">
-            
-
-
-                <div class="accordion__inner">
-                    <?php if( have_rows('accordion_item') ): ?>
-                        <div class='js-accordion' data-accordion-prefix-classes='accordion'>
-                            <?php while( have_rows('accordion_item') ): the_row(); ?>
-                                <h3 class='js-accordion__header'><?php the_sub_field('title'); ?></h3>
-                                <div class='js-accordion__panel'><?php the_sub_field('content'); ?></div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                    
-             
-           
-            </div>       
+      
         
 
         
@@ -184,27 +168,17 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
         
         
         
-        <?php elseif( get_row_layout() == 'gallery' ): ?>
-            <div class="page__builder__container page-gallery">
+        <?php elseif( get_row_layout() == 'programme' ): ?>
+            <div class="page__builder__container programme <?php the_sub_field('class');?>" style="background-color: <?php the_sub_field('background_colour');?>; color: <?php the_sub_field('text_colour');?>">
+                <h2><?php _e( 'Programme', '1finch'); ?></h2>
+                <?php
+                if( get_sub_field('section') ) {
+                    echo '<p>'. get_sub_field('section') .'</p>';
+                }
+                ?>
+                
 
-                    <?php 
-                        $images = get_sub_field('images');
-
-                        if( $images ): ?>
-                            
-                                <?php foreach( $images as $image ): ?>
-                                    <div class="page-gallery__item">
-                                        <a href="<?php echo $image['sizes']['large']; ?>" >
-                                        <div class="page-gallery__image" style="background-image: url('<?php echo $image['sizes']['thumbnail']; ?>');">
-                                            <?php if($image['caption']) { echo '<p>'.$image['caption'].'</p>'; } ?>
-                                        </div>
-                                        </a>
-                                    </div>
-                                <?php endforeach; ?>
-                          
-                    <?php endif; ?>
-
-            </div>
+           </div>
 
         
         <?php endif; ?>

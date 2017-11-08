@@ -98,6 +98,16 @@ html, body {
         margin-top: 10px;
       }
     }
+    
+  }
+  .gallery-icon {
+    > a {
+      display: inline-block;
+      margin: auto;
+      img {
+        border: 0 !important;
+      }
+    }
   }
   .page__title {
     text-align: center;
@@ -105,7 +115,7 @@ html, body {
     h1 {
       display: inline-block;
       position: relative;
-      padding-bottom: 10px;
+      padding: 10px 0;
       color: @scout-green;
       // margin-top: 10px;
       &:after {
@@ -123,6 +133,11 @@ html, body {
   .page__featured-image {
     .bg-cover(200px);
     border-bottom: 3px solid @scout-green;
+  }
+  .entry-content {
+    img {
+      .img-responsive();
+    }
   }
 }
 .breadcrumbs-search {
@@ -176,12 +191,13 @@ html, body {
     ul {
       padding-left: 0;
       margin-bottom: 0;
+      .list-unstyled();
     }
     li {
-      display: block;
-      margin-bottom: 15px;
+      display: inline-block;
+      margin: 5px;
       &:last-child {
-        margin-bottom: 0;
+        // margin-bottom: 0;
       }
     }
     a {

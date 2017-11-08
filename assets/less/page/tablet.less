@@ -13,6 +13,17 @@
             .wysiwyg_editor {
                 .make-column(6);
             }
+            &.minibus {
+                .wysiwyg_editor:first-child {
+                    .make-column(8);
+                }
+                .wysiwyg_editor:nth-child(2) {
+                    .make-column(4);
+                    h4 {
+                        margin-top: 7px;
+                    }
+                }
+            }
         }
         .third_two_thirds {
             .wysiwyg_editor:first-child {
