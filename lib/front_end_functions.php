@@ -2,7 +2,11 @@
 add_filter('widget_text', 'do_shortcode');// execute shortcodes in widgets
 
 
-// Numeric page navigation, adapted from Bones
+/*
+ *
+ * Numeric page navigation, adapted from Bones
+ * 
+ */
 function finch_page_navi() {
     global $wp_query;
     $bignum = 999999999;
@@ -24,9 +28,13 @@ function finch_page_navi() {
         ) );
 
     echo '</nav>';
-} /* end page navi */
+} 
 
-// remove home from breadrumbs
+/*
+ *
+ * Remove home from breadrumbs
+ * 
+ */
 function remove_home_from_breadcrumb($links)
 {
 	if ($links[0]['url'] == get_home_url()) { array_shift($links); }
@@ -47,7 +55,11 @@ function wti_loginout_menu_link( $items, $args ) {
    return $items;
 }
 
-// this code will run for form 420 only; change 420 to your form ID
+/*
+ *
+ * Gravity Forms - validate age
+ * 
+ */
 add_filter('gform_validation_1', 'verify_minimum_age');
 function verify_minimum_age($validation_result){
 
