@@ -42,21 +42,6 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
     elseif (stristr($item_html, 'li class="dropdown-header')) {
       $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
     }
-    /* add  images
-    if($item->object=="subject") {
-        $image = get_field('featured_image', "subject_".$item->object_id);
-       // print_r($image);
-        if(isset($image["sizes"]["thumbnail"])) {
-            $item_html = preg_replace('/<a[^>]*>/iU', '$0<span>', $item_html); // add beginning span tag inside <a>
-            $item_html = str_replace('</a>', '</span> <img src="'.$image["sizes"]["thumbnail"].'" alt=""/></a>', $item_html); // add ending span tag inside </a>
-        }else{
-            
-            $item_html = preg_replace('/<a[^>]*>/iU', '$0<span>', $item_html); // add beginning span tag inside <a>
-            $item_html = str_replace('</a>', '</span> <img src="http://placehold.it/200x120"/></a>', $item_html);
-           
-        }
-    }
-    */
     $item_html = apply_filters('roots/wp_nav_menu_item', $item_html);
     $output .= $item_html;
   }

@@ -1,0 +1,106 @@
+# Adapted from https://salferrarello.com/wordpress-gitignore/ and WPEngine's gitignore
+# Need to ignore already commited files? See: https://stackoverflow.com/questions/6964297/untrack-files-from-git
+
+# wp-content
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/*
+wp-content/backup-db/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/cache/supercache/*
+wp-content/backups/
+wp-content/plugins/wordfence/tmp/
+sitemap.xml
+*.log
+sitemap.xml.gz
+
+# Ignore theme dependencies and generated failes
+*.sass-cache
+node_modules/
+
+# Ignore local dev files
+local-config.php
+local-phpinfo.php
+local-by-flywheel-demo-urls.php
+
+# Ignore all files starting with . or ~
+.*
+~*
+!.gitignore
+!.bitbucket-pipelines.yml
+
+# Ignore all Codekit
+*.codekit*
+
+# Ignore OS generated files
+ehthumbs.db
+Thumbs.db
+*.DS_store
+.DS_store?
+icon?
+.svn
+.cvs
+*.bak
+*.swp
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# wpengine specific
+.smushit-status
+.gitattributes
+_wpeprivate
+wp-content/object-cache.php
+wp-content/mu-plugins/mu-plugin.php
+wp-content/mu-plugins/slt-force-strong-passwords.php
+wp-content/mu-plugins/limit-login-attempts
+wp-content/mu-plugins/wpengine-common
+
+# Ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# large/disallowed file types
+# a CDN should be used for these
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi
