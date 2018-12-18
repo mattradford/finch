@@ -5,11 +5,11 @@
         align-items: center;
         justify-content: flex-start;
     }
-    .banner__logo {
-        .logo {
-            display: inline-block;
-            // Requires a double-size image.
-            .img-retina('../img/scout-logo.png', 100px, 62px);
+    .banner__container {
+        a.logo {
+            width: 440px;
+            max-width: unset;
+            padding: 0;
         }
     }
     .banner__title {
@@ -24,10 +24,11 @@
     .banner__button {
         text-align: right;
         flex-grow: 1;
+        align-self: end;
         .button {
             background-color: @scout-green;
             border-radius: 3px;
-            font-family: @serif;
+            font-family: @sans-serif;
         }
     }
 }

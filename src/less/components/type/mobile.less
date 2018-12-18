@@ -36,30 +36,33 @@ h6,
 .h6 {}
 h1,
 .h1 {
-  font-family: @serif;
+  font-family: @sans-serif;
   color: @scout-green;
   font-size: 28px;
 }
 h2,
 .h2 {
-  font-family: @serif;
-  color: @scout-purple;
-  text-transform: uppercase;
+  font-family: @sans-serif;
+  color: @scout-green;
   font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
 h3,
 .h3 {
-  font-family: @serif;
-  color: @scout-grey;
-  text-transform: uppercase;
+  font-family: @sans-serif;
+  color: @scout-green;
   font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
 h4,
 .h4 {
-  font-family: @serif;
+  font-family: @sans-serif;
   color: @scout-grey;
   margin-top: 10px;
   margin-bottom: 4px;
+  font-weight: bold;
 }
 h5,
 .h5 {}
@@ -253,10 +256,11 @@ blockquote {
   // font-weight: bold;
   position: relative;
   padding: 20px 3em;
-  border-radius: @border-radius-base;
+  // border-radius: @border-radius-base;
+  border-left: 2px solid @scout-green;
   &:before {
     font-family: "fontawesome";
-    content: @fa-var-quote-left;
+    // content: @fa-var-quote-left;
     display: inline-block;
     position: absolute;
     left: 1em;
@@ -265,7 +269,7 @@ blockquote {
   }
   &:after {
     font-family: "fontawesome";
-    content: @fa-var-quote-right;
+    // content: @fa-var-quote-right;
     display: inline-block;
     position: absolute;
     right: 1em;

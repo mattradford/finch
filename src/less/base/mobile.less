@@ -4,50 +4,28 @@ html, body {
 }
 .banner {
   background-color: @scout-purple;
-  padding: 10px 0 12px;
+  padding: 5px 0;
   .banner__container {
     .container();
-  }
-  .banner__row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-  }
-  .banner__logo {
-    .logo {
-      display: none;
-      // Requires a double-size image.
-      .img-retina('../img/fleur-de-lis.png', 30px, 30px);
-      vertical-align: middle;
+    a.logo {
+      padding-right: 20px;
+      display: inherit;
+      padding-bottom: 5px;
+      max-width: 240px;
     }
   }
-  .banner__title {
-    span {
-      font-family: @serif;
-      color: white;
-      font-size: 16px;
-      vertical-align: middle;
-      &:first-child {
-        margin-left: 10px;
-      }
-      &:nth-child(2) {
-        display: none;
-      }
-      &:last-child {
-        margin-left: 10px;
-        display: block;
-      }
-    }
-  }
+  
   .banner__button {
     text-align: right;
     flex-grow: 1;
     .button {
       border-radius: 3px;
-      font-family: @serif;
+      font-family: @sans-serif;
       padding: 5px;
       &.nav-control {
-        background-color: @scout-orange;
+        background-color: @scout-green;
         transition: all 0.3s ease;
         span {
           min-width: 51px;
@@ -66,9 +44,7 @@ html, body {
       }
       &.join {
         background-color: @scout-green;
-        span {
-          display: none;
-        }
+        display: none;
       }
     }
   }

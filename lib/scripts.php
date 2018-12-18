@@ -26,12 +26,18 @@ function roots_scripts() {
     add_filter('script_loader_src', 'roots_jquery_local_fallback', 10, 2);
   }
   if ( is_page_template('where-we-meet.php') ) {
-    wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js', array(), '3', true);
+    wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?key=AIzaSyDIchyUb3aJhXrnXtBYN4ZACOA5mVTaZ7w', array(), '3', true);
   }
   if ( !is_admin() ) {
         wp_register_script( 'custom-scripts', get_template_directory_uri() . '/assets/js/custom_scripts.js', array(), '', true );
   }
+    $query_args = array(
+      'family' => 'Nunito+Sans',
+      'subset' => 'latin,latin-ext',
+    );
+	  wp_register_style( 'scout-font', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 
+    wp_enqueue_style( 'scout-font' );
     wp_enqueue_script('jquery');
     wp_enqueue_script('custom-scripts');
 }
@@ -70,3 +76,10 @@ remove_action ('wp_head', 'wp_generator');
 remove_action ('wp_head', 'rsd_link');
 remove_action ('wp_head', 'wlwmanifest_link');
 remove_action ('wp_head', 'wp_shortlink_wp_head');
+
+function my_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyDIchyUb3aJhXrnXtBYN4ZACOA5mVTaZ7w');
+}
+
+add_action('acf/init', 'my_acf_init');

@@ -173,7 +173,7 @@ gulp.task('wppot', function () {
 
 // Watch task
 // What happens when user runs 'gulp watch'
-gulp.task('watch', ['browsersync'], function () {
+gulp.task('watch', function () {
 
     // Watch .scss files
     gulp.watch('./src/less/**/*.less', ['less-main']);

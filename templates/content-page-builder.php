@@ -150,7 +150,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
                         if( $images ): ?>
                             <div class="page-slideshow__slick">
                                 <?php foreach( $images as $image ): ?>
-                                    <div class="page-slideshow__item" style="background-image: url('<?php echo $image['sizes']['large']; ?>');">
+                                    <div class="page-slideshow__item" style="background-image: url('<?php echo $image['url']; ?>');">
                                         <?php if($image['caption']) { echo '<p>'.$image['caption'].'</p>'; } ?>
                                     </div>
                                 <?php endforeach; ?>
