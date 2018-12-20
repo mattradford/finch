@@ -25,9 +25,6 @@ function roots_scripts() {
     wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/plugins/jquery.min.js', array(), null, false);
     add_filter('script_loader_src', 'roots_jquery_local_fallback', 10, 2);
   }
-  if ( is_page_template('where-we-meet.php') ) {
-    wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?key=AIzaSyDIchyUb3aJhXrnXtBYN4ZACOA5mVTaZ7w', array(), '3', true);
-  }
   if ( !is_admin() ) {
         wp_register_script( 'custom-scripts', get_template_directory_uri() . '/assets/js/custom_scripts.js', array(), '', true );
   }
